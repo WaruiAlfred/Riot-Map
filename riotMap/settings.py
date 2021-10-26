@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'map',
     'cloudinary',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,5 @@ cloudinary.config(
     api_key = config('CLOUDINARY_API_KEY'),
     api_secret = config('CLOUDINARY_API_SECRET'),
 )
+
+LOGIN_REDIRECT_URL = 'home'
