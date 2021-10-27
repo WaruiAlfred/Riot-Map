@@ -146,3 +146,6 @@ cloudinary.config(
 )
 
 LOGIN_REDIRECT_URL = 'home'
+
+# GOOGLE_MAPS_API_KEY = config('GOOGLE_MAPS_API_KEY'),
+GOOGLE_MAPS_API_KEY = 'AIzaSyBhHNd7bHnTlwWuHdkbPNBhQyRoKP_f9PQ'

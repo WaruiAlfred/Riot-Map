@@ -7,7 +7,9 @@ class Profile(models.Model):
   user = models.OneToOneField(User,on_delete=models.CASCADE)
   contact = models.CharField(max_length=10)
   country = models.CharField(max_length=50)
-  location = models.CharField(max_length=30)
+  location = models.CharField(max_length=255)
+  latitude = models.DecimalField(max_digits=9,decimal_places=6,null=True,blank=True)
+  longitude = models.DecimalField(max_digits=9,decimal_places=6,null=True,blank=True)
   important_areas = models.TextField()
   profile_pic = CloudinaryField('profile')
   
