@@ -1,0 +1,39 @@
+{% load static %} {% load bootstrap5 %}
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="#" alt="" width="60" height="60" class="rounded-circle">
+      Riot Map
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav  mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  d-flex" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {% if request.user.profile.picture %}
+                <img src="{{request.user.profile.picture.url}}" alt="" width="60" height="60" class="rounded-circle me-1">
+              {% else %}
+                <img src="{% static 'images/profile_pic.svg' %}" alt="" width="60" height="60" class="rounded-circle me-1">
+              {% endif %}
+              <b class="me-1 mt-3">{{user.username}}</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="profile/">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="logout/">Logout</a></li>
+            </ul>
+          </li>
+            
+        {% else %}
+          <li class="nav-item mt-3">
+            <a class="nav-link" href="/accounts/register/">Login/Register</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
