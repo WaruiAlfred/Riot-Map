@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 {% load bootstrap5 %}
+{% load static %}
 
 {% block content %}
-  <div class="container">
+  <div class="container-fluid">
+    <div class="static-img">
+      <div class="riot-img" style="background-image:url({% static 'images/riot.jpg' %});">
+        <div class="riot-description">
+          <p>The city's current situation</p>
+        </div>
+      </div>
+      <div class="static-map" style="background-image:url({% static 'images/map.jpg' %});">
+      </div>
+    </div>
     <h1 class="text-center">Riot Map</h1>
   </div>
 {% endblock content %}
