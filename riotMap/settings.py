@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'map',
     'cloudinary',
     'bootstrap5',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -128,8 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = [
-    os.path.join(BASE_DIR,"static")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,"static"),
 ]
 
 # Default primary key field type
@@ -145,3 +146,6 @@ cloudinary.config(
 )
 
 LOGIN_REDIRECT_URL = 'home'
+
+# GOOGLE_MAPS_API_KEY = config('GOOGLE_MAPS_API_KEY'),
+GOOGLE_MAPS_API_KEY = 'AIzaSyBhHNd7bHnTlwWuHdkbPNBhQyRoKP_f9PQ'

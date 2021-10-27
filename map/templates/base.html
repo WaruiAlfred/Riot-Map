@@ -14,11 +14,22 @@
 
     {% block styles %}
       {% bootstrap_css %}
-      <link rel="stylesheet" href="">
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% endblock styles %}
     
   </head>
   <body>
+    {% include 'navbar.html' %}
+
+    <!--Flash messages-->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+          {{message}}
+        </div>
+      {% endfor %}
+    {% endif %}
+
     {% block content %}{% endblock content %}
 
     {% block scripts %}
