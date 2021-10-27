@@ -14,8 +14,8 @@
         {% if user.is_authenticated %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle  d-flex" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {% if request.user.profile.picture %}
-                <img src="{{request.user.profile.picture.url}}" alt="" width="60" height="60" class="rounded-circle me-1">
+              {% if request.user.profile.profile_pic %}
+                <img src="{{request.user.profile.profile_pic.url}}" alt="" width="60" height="60" class="rounded-circle me-1">
               {% else %}
                 <img src="{% static 'images/profile_pic.svg' %}" alt="" width="60" height="60" class="rounded-circle me-1">
               {% endif %}
